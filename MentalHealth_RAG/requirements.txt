@@ -1,8 +1,11 @@
 streamlit
+evaluate
 pypdf
 langchain
 sentence-transformers
 langchain-community
 opensearch-py
 faiss-cpu
+accelerate
+bert_score
 
