@@ -1,4 +1,4 @@
-# RAG_MentalHealth
+# MindMATE : RAG_MentalHealth
 RAG chatbot for mental health 
 
 # MentalHealth
