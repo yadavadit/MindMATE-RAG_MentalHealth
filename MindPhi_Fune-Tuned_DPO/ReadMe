@@ -1,0 +1,61 @@
+# MindMATE Project
+
+## Overview
+Welcome to the MindMATE project! This project builds on the previous version of the Mental Health Chatbot by introducing a key upgrade: **MindPhi**. MindPhi is based on Microsoft's Phi-3-mini-4k-instruct model, which has been fine-tuned using Direct Preference Optimization (DPO) on a custom mental health dataset curated with OpenAI's ChatGPT.
+
+## Why MindPhi?
+Mental health is a deeply sensitive area. It's critical for our chatbot to respond with the appropriate level of empathy and care. By leveraging DPO, we've fine-tuned MindPhi to align its responses to ensure they are thoughtful and appropriate for every interaction, making the chatbot more effective in supporting users with mental health needs.
+
+## Key Features
+- **Fine-Tuned Model**: MindPhi is based on the Phi-3-mini-4k-instruct model, fine-tuned using DPO for better response alignment.
+- **Custom Mental Health Dataset**: The model was trained on a dataset specifically curated for mental health applications using OpenAI's ChatGPT.
+- **Empathetic and Careful Responses**: The chatbot is designed to deliver thoughtful and empathetic responses, crucial for mental health support.
+
+## Installation
+
+1. **Clone the repository**:
+    ```bash
+    git clone https://github.com/your-username/mindmate.git
+    cd mindmate
+    ```
+
+2. **Login to Hugging Face CLI**:
+    ```bash
+    huggingface-cli login
+    ```
+   If a token is already saved on your machine, run `huggingface-cli whoami` to get more information, or `huggingface-cli logout` if you want to log out. Generate a token from [Hugging Face Tokens](https://huggingface.co/settings/tokens).
+
+3. **Install dependencies**:
+    ```bash
+    pip install --upgrade transformers datasets peft trl bitsandbytes
+    ```
+
+## Usage
+
+1. **Load the Fine-Tuned Model**:
+    ```python
+    from transformers import AutoModelForCausalLM, AutoTokenizer
+
+    model = AutoModelForCausalLM.from_pretrained("path-to-your-finetuned-model")
+    tokenizer = AutoTokenizer.from_pretrained("path-to-your-finetuned-model")
+    ```
+
+2. **Interact with the Chatbot**:
+    ```python
+    inputs = tokenizer("Your text input here", return_tensors="pt")
+    outputs = model.generate(**inputs)
+    print(tokenizer.decode(outputs[0], skip_special_tokens=True))
+    ```
+
+## Youtube Video
+Feel free to check my youtube video : https://youtu.be/T-3otgKw4SQ
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contact
+For any questions or feedback, feel free to reach out via [LinkedIn](https://www.linkedin.com/in/yaditi/).
+
+## Acknowledgments
+- Microsoft for the Phi-3-mini-4k-instruct model.
+- OpenAI for the ChatGPT assistance in curating the custom dataset.
