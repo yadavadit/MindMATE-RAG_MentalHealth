@@ -15,7 +15,7 @@ Mental health is a deeply sensitive area. It's critical for our chatbot to respo
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/your-username/mindmate.git
+    git clone MindPhi_Fune-Tuned_DPO
     cd mindmate
     ```
 
